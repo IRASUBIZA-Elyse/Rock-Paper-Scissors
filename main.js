@@ -1,31 +1,30 @@
-let computerSelection = getComputerChoice();
+let computerSelected = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
 
 function getComputerChoice(){
-    let choice = ["Rock","Paper","Scissors"];
-    let choosenChoice = Math.floor(Math.random()*3);
+    let choice = ["rock","paper","scissor"];
+    let choosenChoice = Math.floor(Math.random()*3) + 1;
     let computerSelection = choice[choosenChoice];
     return(computerSelection);
     }
- 
-  const selection = prompt("Choose between:rock,scissor,paper");
-  const playerSelection = selection.toLowerCase();
-    
-    
-    for(let i = 1; i>=5; i++){
+    const selection = prompt("Choose between:rock,scissor,paper");
+    const playerSelection = selection.toLowerCase();
+
+    for(let i = 1; i<=5; i++){
    
-    function playRound(playerselection,computerSelection){
+    function playRound(playerSelection,computerSelected){
         
-        if ((playerselection === "rock" && computerSelection ==="rock")||(playerselection === "paper" && computerSelection ==="paper")||(playerselection === "scissor" && computerSelection ==="scissor")){
+        
+        if (playerSelection == computerSelected){
            return "it's a draw";
         }
         
-        else if ((playerselection === "paper" && computerSelection ==="rock")||(playerselection === "rock" && computerSelection ==="scissor")){
+        else if ((playerSelection == "paper" && computerSelected =="rock")||(playerselection == "rock" && computerSelected =="scissor")){
             return "You win";
             playerScore++;
         }
-        else if ((playerselection === "scisssor" && computerSelection ==="rock")||(playerselection === "rock" && computerSelection ==="paper")){
+        else if ((playerSelection == "scisssor" && computerSelected =="rock")||(playerselection == "rock" && computerSelected =="paper")){
            return "computer wins";
            computerScore++;}
         }
@@ -33,9 +32,13 @@ function getComputerChoice(){
     
     function theWinner(playerScore,computerScore){
     if(playerScore > computerScore){
-        return "You won"
-    }else return "You lost"
+        return "You lost";
+    }else if (playerScore == computerScore){
+        return "You won";
+   }
 }
-console.log(playRound(playerselection,computerSelection));
-console.log(getComputerChoice());
-console.log(``)
+console.log(`computer choose: ${getComputerChoice()}`);
+console.log(`you choose: ${playerSelection}`)
+console.log(playRound(playerSelection,computerSelected));
+console.log(theWinner(playerScore,computerScore));
+
