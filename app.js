@@ -10,9 +10,9 @@ function getComputerChoice(){
 }
 
 function playerChoose(){
-    const selection = prompt("Choose between:rock,scissor,paper");
+    const selection = prompt("Choose between:rock,scissors,paper");
     const playerSelect = selection.toLowerCase();
-    return playerSelection;
+    return playerSelect;
 }
 
 function playRound(playerSelection, computerSelection)
@@ -59,7 +59,7 @@ function playRound(playerSelection, computerSelection)
        return 'You won! Paper covers rock';
     }
 }
-const playerSelection = "rock";
+// const playerSelection = "rock";
 
 const game = () =>{
   for (let i = 0; i<5; i++){
